@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const AxiosInstance = axios.create({
-    // baseURL: "https://bowllywood-8llo.onrender.com/"
-    baseURL: 'http://localhost:3001'
+    baseURL: "https://bowllywood-8llo.onrender.com/"
+    // baseURL: 'http://localhost:3001'
 });
 
 AxiosInstance.interceptors.request.use(function(config) {

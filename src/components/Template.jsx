@@ -24,19 +24,13 @@ const Template = () => {
             </Link>
         </SidebarItem>,
         <SidebarItem>
-            <Link to="/reservations" className='text-decoration-none text-black text-center'>
-                <i className="fa-solid fa-money-bill text-black flex-center"></i>
-                <p className='text-black'>Réservation</p>
-            </Link>
-        </SidebarItem>,
-        <SidebarItem>
             <Link to="/menus" className='text-decoration-none text-black text-center'>
                 <i className="fa-solid fa-utensils text-black flex-center"></i>
                 <p>Menu</p>
             </Link>
         </SidebarItem>,
         <SidebarItem>
-            <Link to="/mark" className='text-decoration-none text-black text-center'>
+            <Link to="/reviews" className='text-decoration-none text-black text-center'>
                 <i className="fa-solid fa-star text-black flex-center"></i>
                 <p>Évaluation</p>
             </Link>
@@ -81,7 +75,7 @@ const Template = () => {
             </Link>
         </SidebarItem>,
         <SidebarItem>
-            <Link to="/mark" className='text-decoration-none text-black text-center'>
+            <Link to="/reviews" className='text-decoration-none text-black text-center'>
                 <i className="fa-solid fa-star text-black flex-center"></i>
                 <p>Évaluation</p>
             </Link>

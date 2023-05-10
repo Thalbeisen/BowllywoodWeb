@@ -11,7 +11,7 @@ import Template from './components/Template';
 import { AuthProvider } from './providers/AuthProvider';
 import AddFranchiseRequestScreen from './screens/addFranchiseRequest';
 import GetUserFranchiseRequestsScreen from './screens/getUserFranchiseRequests';
-import ProfileScreen from './screens/profiles/ProfileScreen';
+// import ProfileScreen from './screens/profiles/ProfileScreen';
 import HomeScreen from './screens/home/HomeScreen';
 import FranchiseRequestDetailsScreen from './screens/franchiseRequestDetails';
 import FranchiseRequestEditScreen from './screens/franchiseRequestEditScreen';
@@ -47,7 +47,7 @@ function App() {
                        <Route path="/menus" element={<MenuScreen />} />
                        <Route path="/menus/desserts" element={<MenuScreen bowlsType='SUCRE'/>} />
                        <Route path="/menus/admin-list" element={
-                          <RouteProtector permittedRoles={['ROLE_SUPERADMIN', 'ROLE_ADMIN', 'ROLE_CEO', 'ROLE_MANAGER', 'ROLE_COOK', 'ROLE_WAITER']}>
+                          <RouteProtector permittedRoles={['ROLE_SUPERADMIN', 'ROLE_ADMIN', 'ROLE_CEO', 'ROLE_MANAGER', 'ROLE_COOK']}>
                              <AdminListMeals />
                           </RouteProtector> } />
                        <Route element={<RouteProtector permittedRoles={['ROLE_ADMIN']} />}>
@@ -62,11 +62,11 @@ function App() {
                         <Route path="/my-franchise-requests/edit/:id" element={<FranchiseRequestEditScreen/>} />
                         <Route path="/my-franchise-requests/cancel/:id" element={<FranchiseRequestCancelScreen/>} />
                         <Route path="/my-franchise-requests" element={<GetUserFranchiseRequestsScreen/>}/>
-                        <Route path="/profile" element={<ProfileScreen/>}/>
+                        <Route path="/profile" element={<MaintenanceScreen/>}/>
                         <Route path="/reviews" element={<MaintenanceScreen/>}/>
                         <Route path="/restaurantList" element={<MaintenanceScreen/>}/>
                         <Route path="/erreur" element={<ErrorScreen />}/>
-                        <Route path="*" element={<ErrorScreen errCode={404} errText="La page demandée n'existe pas. Veuillez recommencer ou retourner sur la pge d'accueil." />}/>
+                        <Route path="*" element={<ErrorScreen errCode="Page non trouvée" errText="La page demandée n'existe pas. Veuillez recommencer ou retourner sur la pge d'accueil." />}/>
                       </Route>
                     </Routes>
                 </Router>

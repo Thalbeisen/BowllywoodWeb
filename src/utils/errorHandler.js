@@ -56,8 +56,17 @@ export function errorHandler(errType, errorCatched, navigate, subjectName) {
 			errCode = ''
 		}
 		errMessage = get_default_message(errCode, subjectName)
+
+		if (errCode === 401 || errCode === 403) {
+			errTitle = 'Accès refusé'
+		} else if (errCode === 404) {
+			errTitle = 'Non trouvé'
+		} else {
+			errTitle = 'Erreur'
+		}
 	}
-	errTitle =`Erreur ${errCode}`
+
+	// errTitle = (errCode) ? errCode : 'Une erreur est survenue';
 
 	// return object or redirect to page
 	switch (errType)
